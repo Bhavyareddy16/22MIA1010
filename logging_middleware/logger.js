@@ -2,7 +2,7 @@ const LOG_API_URL = "http://4.224.186.213/evaluation-service/logs";
 
 const Log = async (stack, level, packageName, message) => {
   try {
-    const token = process.env.LOG_ACCESS_TOKEN;
+    const token = process.env.LOG_ACCESS_TOKEN?.trim();
 
     if (!token) {
       console.error("Logging token is missing");
